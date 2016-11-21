@@ -24,12 +24,12 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, db) => {
   //   console.log(result);
   // });
 
-  db.collection('Users').deleteMany({name: 'Jaeyoung'});
-  // db.collection('Users').findOneAndDelete({
-  //   _id: new ObjectID("582d1330f16b681d84a3599b")
-  // }).then((results) => {
-  //   console.log(JSON.stringify(results, undefined, 2));
-  // });
+  // db.collection('Users').deleteMany({name: 'Jaeyoung'});
+  db.collection('Users').findOneAndDelete({
+    _id: new ObjectID("582d1330f16b681d84a3599b")
+  }).then((results) => {
+    console.log(JSON.stringify(results, undefined, 2));
+  });
 
   db.close();
 });
